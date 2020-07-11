@@ -1,0 +1,63 @@
+﻿<Window x:Class="PomodoroClock.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PomodoroClock"
+        mc:Ignorable="d"
+        Title="Configurações" Height="250" Width="300">
+    <Grid Background="#FF0B2B46">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,0" Grid.Column="0">
+                    <TextBox BorderBrush="#FFAAD576" FontSize="23" BorderThickness="1" Text="00" FontFamily="Bauhaus 93" Foreground="#FFFEE440" MaxLength="2" Name="tbWorkingHour" PreviewTextInput="NumberValidationTextBox" Width="30" Height="43" ToolTip="Horas"/>
+                    <TextBlock Text=":" FontSize="26" FontFamily="Bauhaus 93" Foreground="#FFFEE440"/>
+                    <TextBox BorderBrush="#FFAAD576" FontSize="23" BorderThickness="1" Text="00" FontFamily="Bauhaus 93" Foreground="#FFFEE440" MaxLength="2" Name="tbWorkingMinute" PreviewTextInput="NumberValidationTextBox" TextWrapping="NoWrap" Width="30" Height="43" ToolTip="Minutos"/>
+                    <TextBlock Text=":" FontSize="26" FontFamily="Bauhaus 93" Foreground="#FFFEE440" />
+                    <TextBox BorderBrush="#FFAAD576" FontSize="23" BorderThickness="1" Text="00" FontFamily="Bauhaus 93" Foreground="#FFFEE440" MaxLength="2" Name="tbWorkingSecond" PreviewTextInput="NumberValidationTextBox" TextWrapping="NoWrap" Width="30" Height="43" ToolTip="Segundos"/>
+                </WrapPanel>
+                <TextBlock Text="Trabalho" HorizontalAlignment="Center" ToolTip="Faz com que o 4° intervalo seja maior" FontSize="20" Height="25" FontFamily="Global User Interface" Foreground="#FFFEE440" Margin="10,10,5,10" VerticalAlignment="Center" Grid.Row="1"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <WrapPanel Orientation="Horizontal" Margin="0,10,10,0" HorizontalAlignment="Right" Grid.Column="1">
+                    <TextBox BorderBrush="#FFAAD576" FontSize="23" BorderThickness="1" Text="00" FontFamily="Bauhaus 93" Foreground="#FFFEE440" MaxLength="2" Name="tbBreakHour" PreviewTextInput="NumberValidationTextBox" TextWrapping="NoWrap" Width="30" Height="43" ToolTip="Horas"/>
+                    <TextBlock Text=":" FontSize="26" FontFamily="Bauhaus 93" Foreground="#FFFEE440"/>
+                    <TextBox BorderBrush="#FFAAD576" FontSize="23" BorderThickness="1" Text="00" FontFamily="Bauhaus 93" Foreground="#FFFEE440" MaxLength="2" Name="tbBreakMinute" PreviewTextInput="NumberValidationTextBox" TextWrapping="NoWrap" Width="30" Height="43" ToolTip="Minutos"/>
+                    <TextBlock Text=":" FontSize="26" FontFamily="Bauhaus 93" Foreground="#FFFEE440" />
+                    <TextBox BorderBrush="#FFAAD576" FontSize="23" BorderThickness="1" Text="00" FontFamily="Bauhaus 93" Foreground="#FFFEE440" MaxLength="2" Name="tbBreakSecond" PreviewTextInput="NumberValidationTextBox" TextWrapping="NoWrap" Width="30" Height="43" ToolTip="Segundos"/>
+                </WrapPanel>
+                <TextBlock Text="Pausa" HorizontalAlignment="Center" ToolTip="Faz com que o 4° intervalo seja maior" FontSize="20" Height="25" FontFamily="Global User Interface" Foreground="#FFFEE440" Margin="10,10,5,10" VerticalAlignment="Center" Grid.Row="1"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Orientation="Horizontal" Margin="10,0" Grid.Row="0">
+                <CheckBox VerticalAlignment="Center" ToolTip="Faz com que o 4° intervalo de cada ciclo seja maior" Name="cbSuper" Foreground="#FFFEE440"/>
+                <TextBlock Text="Super Pomodoro" ToolTip="Faz com que o 4° intervalo de cada ciclo seja maior" FontSize="20" Height="25" FontFamily="Global User Interface" Foreground="#FFFEE440" Margin="10,10,5,10" VerticalAlignment="Center"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="1" Orientation="Horizontal">
+                <Button VerticalAlignment="Bottom" BorderBrush="#FFAAD576" FontSize="14" BorderThickness="1" Content="Retornar aos padrões" FontFamily="Global User Interface" Foreground="#FFFEE440" Margin="10" Background="{x:Null}" Name="btnStandard" Click="btnStandard_Click" Grid.Row="1" ToolTip="Retorna ás configurações padrões do aplicativo"/>
+                <Button VerticalAlignment="Bottom" BorderBrush="#FFAAD576" FontSize="15" BorderThickness="1" Content="Salvar" FontFamily="Global User Interface" Foreground="#FFFEE440" Margin="10" Background="{x:Null}" Name="btnSave" Click="btnSave_Click" Grid.Row="1" ToolTip="Salva as configurações personalizadas"/>
+            </WrapPanel>
+        </Grid>
+        </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="PomodoroClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:local="clr-namespace:PomodoroClock"
+        mc:Ignorable="d"
+        Title="RPM" Height="500" Width="300">
+    <Grid Background="#FF011627">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnStop" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="0" Foreground="#FFAAD576" HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnStop_Click" ToolTip="Para o cronômetro" IsEnabled="False">
+                <materialDesign:PackIcon Kind="Stop" Height="30" Width="30"/>
+            </Button>
+            <TextBlock x:Name="tbText" FontSize="23" FontFamily="Bauhaus 93" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Foreground="#FFFEE440" Text="{Binding Path=CurrentText}"/>
+            <TextBlock x:Name="tbClock" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="62" Foreground="#FFFEE440" FontFamily="Bauhaus 93" Grid.Row="1" Text="{Binding Path=CurrentTime}"/>
+        </Grid>
+
+        <WrapPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Button Background="{x:Null}" Foreground="#FF1B5501" Width="95" Height="165" Name="btnPlay" BorderThickness="0,2,1,0" BorderBrush="#FFAAD576" Click="btnPlay_Click" ToolTip="Inicía o cronômetro">
+                <materialDesign:PackIcon Kind="Play" Height="50" Width="50" Foreground="#FFAAD576"/>
+            </Button>
+            <Button Background="{x:Null}" Foreground="#FF1B5501" Width="95" Height="165" Name="btnPause" BorderThickness="1,2,1,0" BorderBrush="#FFAAD576" Click="btnPause_Click" ToolTip="Pausa o cronômetro" IsEnabled="False">
+                <materialDesign:PackIcon Kind="Pause" Height="50" Width="50" Foreground="#FFAAD576"/>
+            </Button>
+            <Button Background="{x:Null}" Foreground="#FF1B5501" Width="94" Height="165" Name="btnConfig" BorderThickness="1,2,0,0" BorderBrush="#FFAAD576" Click="btnConfig_Click" ToolTip="Abre a tela de configuração, pausando o cronômetro">
+                <materialDesign:PackIcon Kind="Settings" Height="50" Width="50" Foreground="#FFAAD576"/>
+            </Button>
+        </WrapPanel>
+    </Grid>
+</Window>
